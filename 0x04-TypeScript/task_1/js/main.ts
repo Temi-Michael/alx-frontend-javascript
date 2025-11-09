@@ -53,13 +53,13 @@ console.log(teacher2);
 console.log(teacher3);
 console.log(director1);
 
-interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
-}
-
 const printTeacher: printTeacherFunction = function (firstName, lastName) {
   return `${firstName}. ${lastName}`;
 };
+
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
 
 console.log(printTeacher("John", "Doe"));
 console.log(printTeacher("Jane", "Smith"));
@@ -76,7 +76,7 @@ interface studentInterface {
 //   lastName: string;
 // }
 
-class StudentClass implements studentInterface {
+class studentClass implements studentInterface {
   firstName: string;
   lastName: string;
 
