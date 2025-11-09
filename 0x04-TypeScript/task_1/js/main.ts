@@ -53,9 +53,9 @@ console.log(teacher2);
 console.log(teacher3);
 console.log(director1);
 
-const printTeacher: printTeacherFunction = function (firstName, lastName) {
-  return `${firstName}. ${lastName}`;
-};
+function printTeacher(firstName : string, lastName : string) : string {
+  return `${firstName} ${lastName}`
+}
 
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
