@@ -7,7 +7,7 @@ interface Teacher {
   [key: string]: any;
 }
 
-interface Directors extends Teacher {
+interface Director extends Teacher {
   numberOfReports: number;
 }
 
@@ -38,7 +38,7 @@ let teacher3: Teacher = {
   contract: true,
 };
 
-let director1: Directors = {
+let director1: Director = {
   firstName: "Diana",
   lastName: "Prince",
   fullTimeEmployee: true,
@@ -54,12 +54,12 @@ console.log(teacher3);
 console.log(director1);
 
 interface printTeacherFunction {
-  (firstName:string, lastName:string) : string
+  (firstName: string, lastName: string): string;
 }
 
-const printTeacher : printTeacherFunction = function (firstName: string, lastName: string): string {
-  return `${firstName.charAt(0)}. ${lastName}`
-}
+const printTeacher: printTeacherFunction = function (firstName, lastName) {
+  return `${firstName}. ${lastName}`;
+};
 
 console.log(printTeacher("John", "Doe"));
 console.log(printTeacher("Jane", "Smith"));
