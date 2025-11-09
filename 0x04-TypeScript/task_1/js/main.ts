@@ -71,12 +71,12 @@ interface studentInterface {
   displayName(): string;
 }
 
-// interface StudentConstructor {
-//   firstName: string;
-//   lastName: string;
-// }
+interface StudentConstructor {
+  firstName: string;
+  lastName: string;
+}
 
-class studentClass implements studentInterface {
+class StudentClass {
   firstName: string;
   lastName: string;
 
