@@ -1,4 +1,4 @@
-import { RowElement, RowID } from "../interface";
+import { RowElement, RowID } from "./interface";
 
 export function insertRow(row: RowElement): RowID;
 export function deleteRow(rowId: RowID): void;
