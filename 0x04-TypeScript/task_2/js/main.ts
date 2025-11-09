@@ -66,12 +66,15 @@ const executeWork = (employee: Director | Teacher): string => {
   return employee.workTeacherTasks();
 };
 
+// 1. Write a String literal type named Subjects
+type Subjects = "Math" | "History";
 
-const teachClass = (Subjects :  "Math" | "History") => {
-    if (Subjects == "Math") {
-        return `Teaching ${Subjects}`;
-    } else if (Subjects == "History") {
-        return `Teaching ${Subjects}`;
-    }
-    return `Unknown Subject: ${Subjects}`;
+// 2. Write a function named teachClass
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  } else {
+    // todayClass must be "History"
+    return "Teaching History";
+  }
 }
