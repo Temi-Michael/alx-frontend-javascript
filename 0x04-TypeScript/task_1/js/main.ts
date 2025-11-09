@@ -53,16 +53,16 @@ console.log(teacher2);
 console.log(teacher3);
 console.log(director1);
 
-function printTeacher(firstName : string, lastName : string) : string {
-  return `${firstName}. ${lastName}`
+function printTeacher({ firstName, lastName }: { firstName: string, lastName: string }): string {
+  return `${firstName}. ${lastName}`;
 }
 
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-console.log(printTeacher("John", "Doe"));
-console.log(printTeacher("Jane", "Smith"));
+console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
+console.log(printTeacher({ firstName: "Jane", lastName: "Smith" }));
 
 interface studentInterface {
   firstName: string;
