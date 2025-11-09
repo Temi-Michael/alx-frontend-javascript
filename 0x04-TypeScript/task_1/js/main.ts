@@ -1,17 +1,17 @@
-interface teacher {
-  firstName: string;
-  lastName: string;
+interface Teacher {
+  readonly firstName: string;
+  readonly lastName: string;
   fullTimeEmployee: boolean;
-  yearsOfExperience: number;
+  yearsOfExperience?: number;
   location: string;
   [key: string]: any;
 }
 
-interface Directors extends teacher {
+interface Directors extends Teacher {
   numberOfReports: number;
 }
 
-let teacher1: teacher = {
+let teacher1: Teacher = {
   firstName: "Alice",
   lastName: "Johnson",
   fullTimeEmployee: true,
@@ -20,7 +20,7 @@ let teacher1: teacher = {
   favoriteSubject: "Mathematics",
 };
 
-let teacher2: teacher = {
+let teacher2: Teacher = {
   firstName: "Bob",
   lastName: "Williams",
   fullTimeEmployee: false,
@@ -29,7 +29,7 @@ let teacher2: teacher = {
   numberOfJobs: 2,
 };
 
-let teacher3: teacher = {
+let teacher3: Teacher = {
   firstName: "Charlie",
   lastName: "Brown",
   fullTimeEmployee: true,
@@ -54,11 +54,11 @@ console.log(teacher3);
 console.log(director1);
 
 interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
+  (firstName:string, lastName:string) : string
 }
 
-function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName.charAt(0)}. ${lastName}`;
+const printTeacher : printTeacherFunction = (firstname, lastname) => {
+  return `${firstname.charAt(0)}. ${lastname}`
 }
 
 console.log(printTeacher("John", "Doe"));
@@ -70,16 +70,26 @@ interface studentInterface {
   workOnHomework(): string;
   displayName(): string;
 }
-class studentClass {
-  constructor(firstName: studentInterface, lastName: studentInterface) {
-    firstName;
-    lastName;
+
+// interface StudentConstructor {
+//   firstName: string;
+//   lastName: string;
+// }
+
+class StudentClass implements studentInterface {
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
   }
+
   workOnHomework(): string {
     return "Currently working";
   }
 
-  displayName(this: studentInterface): string {
-    return `${this.firstName}`;
+  displayName(): string {
+    return this.firstName;
   }
 }
