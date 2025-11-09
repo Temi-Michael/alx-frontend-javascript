@@ -51,9 +51,9 @@ console.log(createEmployee(1000));
 
 console.log(createEmployee("$500"));
 
-const isDirector = (employee: Director | Teacher): employee is Director => {
+function isDirector(employee: Director | Teacher): employee is Director {
   return employee instanceof Director;
-};
+}
 
 const executeWork = (employee: Director | Teacher): string => {
   // if (employee instanceof Director) {
