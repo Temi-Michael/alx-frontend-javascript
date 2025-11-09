@@ -54,7 +54,7 @@ console.log(teacher3);
 console.log(director1);
 
 function printTeacher(firstName : string, lastName : string) : string {
-  return `${firstName} ${lastName}`
+  return `${firstName}. ${lastName}`
 }
 
 interface printTeacherFunction {
