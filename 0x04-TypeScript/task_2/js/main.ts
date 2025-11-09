@@ -7,7 +7,7 @@ interface DirectorInterface {
 interface TeacherInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
-  workTeacherTask(): string;
+  workTeacherTasks(): string;
 }
 
 class Director implements DirectorInterface {
@@ -20,7 +20,7 @@ class Director implements DirectorInterface {
   }
 
   workDirectorTasks(): string {
-    return "Getting a director tasks";
+    return "Getting to director tasks";
   }
 }
 
@@ -33,7 +33,7 @@ class Teacher implements TeacherInterface {
     return "Cannot have a break";
   }
 
-  workTeacherTask(): string {
+  workTeacherTasks(): string {
     return "Getting to work";
   }
 }
@@ -63,7 +63,7 @@ const executeWork = (employee: Director | Teacher): string => {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   }
-  return employee.workTeacherTask();
+  return employee.workTeacherTasks();
 };
 
 
